@@ -70,7 +70,7 @@ export default function Warehouse() {
 
             {/* MAIN CONTENT */}
             <div className="flex flex-1 justify-center items-center min-h-0">
-                <div className="w-full max-w-5xl flex flex-col items-center justify-center bg-white/90 rounded-2xl shadow-2xl p-8 md:p-12">
+                <div className="w-full max-w-5xl flex flex-col items-center justify-center bg-white/90 rounded-2xl shadow-2xl p-4 sm:p-8 md:p-12">
                     {/* หัวข้อ */}
                     <div className="mb-8 flex items-center gap-4">
                         <span className="text-4xl text-blue-400 drop-shadow-lg">•</span>
@@ -82,20 +82,20 @@ export default function Warehouse() {
                     <div className="overflow-x-auto w-full rounded-xl bg-white shadow-md mb-10">
                         <table className="min-w-full border-separate border-spacing-0 text-xs md:text-sm lg:text-base">
                             <thead>
-                                <tr className="bg-blue-100">
-                                    <th className="border px-2 md:px-4 py-2 md:py-3 font-bold text-xs md:text-base text-blue-700 rounded-tl-xl">
+                                <tr className="bg-blue-100 text-blue-900">
+                                    <th className="border border-blue-300 px-2 md:px-4 py-2 md:py-3 font-bold text-xs md:text-base bg-blue-100 rounded-tl-xl">
                                         ลำดับ
                                     </th>
-                                    <th className="border px-2 md:px-4 py-2 md:py-3 font-bold text-xs md:text-base text-blue-700">
+                                    <th className="border border-blue-300 px-2 md:px-4 py-2 md:py-3 font-bold text-xs md:text-base bg-blue-100">
                                         ชื่อคลังสินค้า
                                     </th>
-                                    <th className="border px-2 md:px-4 py-2 md:py-3 font-bold text-xs md:text-base text-blue-700">
+                                    <th className="border border-blue-300 px-2 md:px-4 py-2 md:py-3 font-bold text-xs md:text-base bg-blue-100">
                                         เจ้าของคลังสินค้า
                                     </th>
-                                    <th className="border px-2 md:px-4 py-2 md:py-3 font-bold text-xs md:text-base text-blue-700">
+                                    <th className="border border-blue-300 px-2 md:px-4 py-2 md:py-3 font-bold text-xs md:text-base bg-blue-100">
                                         สถานะ
                                     </th>
-                                    <th className="border px-2 md:px-4 py-2 md:py-3 font-bold text-xs md:text-base text-blue-700 rounded-tr-xl">
+                                    <th className="border border-blue-300 px-2 md:px-4 py-2 md:py-3 font-bold text-xs md:text-base bg-blue-100 rounded-tr-xl">
                                         วันที่สร้าง / วันที่เข้าร่วม
                                     </th>
                                 </tr>
@@ -105,35 +105,36 @@ export default function Warehouse() {
                                     <tr
                                         key={row.id}
                                         onClick={() => setSelectedRow(idx)}
-                                        className={`cursor-pointer transition ${selectedRow === idx
-                                            ? "bg-blue-400/70 ring-2 ring-blue-400"
-                                            : "hover:bg-blue-50"
+                                        className={`cursor-pointer transition 
+        ${selectedRow === idx
+                                                ? "bg-blue-100 ring-2 ring-blue-400"
+                                                : "hover:bg-blue-50"
                                             }`}
                                     >
-                                        <td className="border px-2 md:px-4 py-2 text-center">{idx + 1}</td>
-                                        <td className="border px-2 md:px-4 py-2">{row.name}</td>
-                                        <td className="border px-2 md:px-4 py-2">{row.owner}</td>
-                                        <td
-                                            className={`border px-2 md:px-4 py-2 ${row.status === "พร้อมใช้งาน"
-                                                ? "text-black"
-                                                : "text-black"
-                                                }`}
-                                        >
+                                        <td className="border border-blue-200 px-2 md:px-4 py-2 text-center text-blue-900">
+                                            {idx + 1}
+                                        </td>
+                                        <td className="border border-blue-200 px-2 md:px-4 py-2 text-blue-900">
+                                            {row.name}
+                                        </td>
+                                        <td className="border border-blue-200 px-2 md:px-4 py-2 text-blue-900">
+                                            {row.owner}
+                                        </td>
+                                        <td className={`border border-blue-200 px-2 md:px-4 py-2
+        ${row.status === "พร้อมใช้งาน"
+                                                ? "text-blue-900"
+                                                : "text-blue-900"
+                                            }`
+                                        }>
                                             {row.status}
                                         </td>
-                                        <td className="border px-2 md:px-4 py-2">{row.date}</td>
-                                    </tr>
-                                ))}
-                                {/* หากไม่มีข้อมูล */}
-                                {rows.length === 0 && (
-                                    <tr>
-                                        <td colSpan={5} className="py-20 text-center text-blue-200 text-lg font-medium border">
-                                            <span className="text-5xl drop-shadow-sm">📦</span>
-                                            <div>ยังไม่มีข้อมูลคลังสินค้า</div>
+                                        <td className="border border-blue-200 px-2 md:px-4 py-2 text-blue-900">
+                                            {row.date}
                                         </td>
                                     </tr>
-                                )}
+                                ))}
                             </tbody>
+
                         </table>
                     </div>
                     {/* ปุ่มด้านล่าง */}
@@ -163,10 +164,8 @@ export default function Warehouse() {
                             กลับสู่หน้าล็อกอิน
                         </button>
                     </div>
-
                 </div>
             </div>
-
         </div>
     );
 }
