@@ -16,51 +16,37 @@ const MENU = [
 
 const PRICINGS = [
     {
-        name: "Trial",
-        price: "FREE",
-        duration: "30 วัน",
+        name: "Starter",
+        price: "$9.99 / เดือน",
         features: ["1GB Storage", "1 Email", "1 Domain", "500MB Bandwidth"],
-        color: "bg-gray-400",
-        btnColor: "bg-gray-400 hover:bg-gray-500",
-        buttonText: "เลือก"
+        buttonText: "เลือก",
     },
     {
         name: "Basic",
         price: "$9.99 / เดือน",
-        duration: "30 วัน",
         features: ["10GB Storage", "10 Emails", "10 Domains", "1GB Bandwidth"],
-        color: "bg-black",
-        btnColor: "bg-emerald-500 hover:bg-emerald-600",
-        buttonText: "เลือก"
+        buttonText: "เลือก",
     },
     {
         name: "Standard",
         price: "$19.99 / เดือน",
-        duration: "30 วัน",
         features: ["20GB Storage", "20 Emails", "20 Domains", "2GB Bandwidth"],
-        color: "bg-blue-500",
-        btnColor: "bg-blue-500 hover:bg-blue-600",
-        buttonText: "เลือก"
+        buttonText: "เลือก",
     },
     {
         name: "Professional",
         price: "$24.99 / เดือน",
-        duration: "30 วัน",
         features: ["50GB Storage", "50 Emails", "50 Domains", "5GB Bandwidth"],
-        color: "bg-green-500",
-        btnColor: "bg-green-500 hover:bg-green-600",
-        buttonText: "เลือก"
+        buttonText: "เลือก",
     },
     {
         name: "Enterprise",
         price: "$49.99 / เดือน",
-        duration: "30 วัน",
         features: ["100GB Storage", "100 Emails", "100 Domains", "10GB Bandwidth"],
-        color: "bg-yellow-500",
-        btnColor: "bg-yellow-500 hover:bg-yellow-600",
-        buttonText: "เลือก"
+        buttonText: "เลือก",
     }
 ];
+
 export default function Home() {
     const [activeTab, setActiveTab] = useState(0);
     const [openMenu, setOpenMenu] = useState(false);
@@ -97,13 +83,13 @@ export default function Home() {
                     onClick={() => setActiveTab(0)}
                 >
                     <Image src="/cube.png" alt="Logo" width={38} height={38} />
-                    <span className="hidden md:inline text-white text-xl md:text-2xl font-bold tracking-wide whitespace-nowrap">
+                    <span className="hidden xl:inline text-white text-xl md:text-2xl font-bold tracking-wide whitespace-nowrap">
                         STOCKNIZE AI
                     </span>
 
                 </div>
                 {/* Desktop MENU BAR */}
-                <nav className="flex-1 hidden md:flex items-center justify-center gap-4 lg:gap-7">
+                <nav className="flex-1 hidden md:flex items-center justify-center gap-2 sm:gap-4 md:gap-7">
                     {MENU.map((item, idx) => (
                         <div
                             key={item}
@@ -111,10 +97,19 @@ export default function Home() {
                             onClick={() => setActiveTab(idx)}
                         >
                             <span
-                                className={`text-white text-[15px] lg:text-[17px] transition ${activeTab === idx
-                                    ? "font-bold"
-                                    : "font-normal opacity-90 hover:opacity-100 hover:font-bold"
-                                    }`}
+                                className={`
+          text-white
+          text-xs
+          sm:text-sm
+          md:text-base
+          lg:text-lg
+          xl:text-[17px]
+          transition
+          ${activeTab === idx
+                                        ? "font-bold"
+                                        : "font-normal opacity-90 hover:opacity-100 hover:font-bold"
+                                    }
+        `}
                             >
                                 {item}
                             </span>
@@ -125,26 +120,61 @@ export default function Home() {
                     ))}
                 </nav>
 
+
                 {/* RIGHT CONTROL */}
                 <div className="flex items-center gap-2 ml-2">
                     <div
-                        className="bg-white/90 rounded-full px-3 md:px-5 py-1.5 flex items-center gap-1 text-blue-500 font-semibold text-xs md:text-base shadow-sm select-none cursor-pointer"
-                        onClick={() => setShowPricing(true)} // <-- เปิด modal
+                        className="
+    bg-white/90
+    rounded-full
+    px-2
+    sm:px-3
+    md:px-5
+    py-1
+    md:py-1.5
+    flex items-center
+    gap-0.5 sm:gap-1
+    text-blue-500
+    font-semibold
+    text-xs
+    sm:text-sm
+    md:text-base
+    shadow-sm
+    select-none
+    cursor-pointer
+    whitespace-nowrap
+  "
+                        onClick={() => setShowPricing(true)}
                     >
                         {activePackage.name} : <span className="ml-1 text-blue-800">{activePackage.duration}</span>
-                        <svg width={18} height={18} className="ml-1" fill="#21a6ff" viewBox="0 0 24 24">
+                        <svg width={16} height={16} className="ml-1" fill="#21a6ff" viewBox="0 0 24 24">
                             <path d="M7 10l5 5 5-5z" />
                         </svg>
                     </div>
+
                     <Image src="/th.png" alt="TH" width={26} height={26} className="rounded-full shadow" />
                     <Image src="/en.png" alt="EN" width={26} height={26} className="rounded-full shadow" />
                     <div className="relative" ref={userMenuRef}>
                         <div
-                            className="text-white text-base md:text-xl font-bold ml-2 select-none cursor-pointer"
+                            className="
+    text-white
+    text-xs         // จอมือถือแนวตั้ง
+    sm:text-sm      // มือถือแนวนอน/จอเล็ก
+    md:text-base    // แท็บเล็ต
+    lg:text-lg      // Desktop เล็ก
+    xl:text-xl      // Desktop ใหญ่
+    font-bold
+    ml-1            // จอมือถือ
+    sm:ml-2         // แท็บเล็ต/เดสก์ท็อป
+    select-none
+    cursor-pointer
+    whitespace-nowrap
+  "
                             onClick={() => setOpenUserMenu((v) => !v)}
                         >
-                            NUT
+                            NUTTAWUT
                         </div>
+
                         {openUserMenu && (
                             <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-2xl ring-1 ring-black/5 z-30 flex flex-col animate-fade-in">
                                 <div className="p-5 pb-3">
@@ -216,7 +246,7 @@ export default function Home() {
                 )}
             </div>
             {/* CONTENT */}
-            <div className="flex-1 bg-white p-4 sm:p-8">
+            <div className="flex-1 bg-white p-4 laptop:p-4 sm:p-8">
                 {activeTab === 0 && (
                     <div>
                         <h1 className="text-xl md:text-2xl font-bold text-blue-700 mb-4">หน้าหลัก</h1>
@@ -270,45 +300,62 @@ export default function Home() {
             {/* MODAL */}
             {showPricing && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm">
-                    <div className="bg-white rounded-2xl shadow-2xl max-w-5xl w-full mx-2 p-6 md:p-10 flex flex-col">
+                    <div className="bg-white rounded-2xl shadow-2xl w-full max-w-5xl mx-2 p-3 sm:p-8 md:p-10 flex flex-col max-h-[95vh] overflow-y-auto">
                         {/* Head */}
-                        <div className="flex items-center justify-between mb-8">
-                            <div className="text-2xl font-bold text-blue-700">เลือกแพ็คเกจ</div>
-                            <button className="text-2xl text-gray-400 hover:text-red-400" onClick={() => setShowPricing(false)}>
+                        <div className="flex items-center justify-between mb-5">
+                            <div className="text-xl md:text-2xl font-bold text-blue-700">เลือกแพ็คเกจ</div>
+                            <button
+                                className="text-2xl text-gray-400 hover:text-red-400"
+                                onClick={() => setShowPricing(false)}
+                            >
                                 ×
                             </button>
                         </div>
-                        {/* Pricing Table */}
-                        <div className="w-full flex flex-col md:flex-row gap-4 md:gap-6 justify-center items-stretch">
+                        {/* Pricing Cards */}
+                        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 md:gap-6 justify-center items-stretch pr-2 md:pr-6 xl:pr-4">
                             {PRICINGS.map((pkg, idx) => (
                                 <div
                                     key={pkg.name}
-                                    className={`flex-1 flex flex-col bg-white rounded-xl shadow-lg border overflow-hidden min-w-[240px]`}
+                                    className={`flex flex-col rounded-2xl shadow-lg border border-gray-200 bg-white overflow-hidden
+                        hover:scale-[1.03] transition-all duration-200 min-w-[185px]`}
                                 >
                                     {/* Head */}
-                                    <div className={`${pkg.color} text-white py-5 text-center text-2xl font-bold`}>{pkg.name}</div>
+                                    <div className={`py-4 text-center text-xl font-bold
+                ${pkg.name === "Starter" ? "bg-gray-400 text-white"
+                                            : pkg.name === "Basic" ? "bg-black text-white"
+                                                : pkg.name === "Standard" ? "bg-blue-500 text-white"
+                                                    : pkg.name === "Professional" ? "bg-green-500 text-white"
+                                                        : "bg-yellow-400 text-white"}`}>
+                                        {pkg.name}
+                                    </div>
                                     {/* Price */}
-                                    <div className="bg-gray-100 py-5 text-center text-xl font-medium text-black">{pkg.price}</div>
+                                    <div className="bg-gray-50 py-4 text-center text-lg font-semibold text-black">{pkg.price}</div>
                                     {/* Features */}
-                                    <div className="flex-1 flex flex-col">
+                                    <div className="flex-1 flex flex-col bg-white">
                                         {pkg.features.map((ft, i) => (
                                             <div
                                                 key={i}
-                                                className="text-black text-lg font-medium py-4 text-center border-b last:border-b-0"
+                                                className="text-gray-700 text-sm md:text-base font-medium py-2 px-2 text-center border-b last:border-b-0"
                                             >
                                                 {ft}
                                             </div>
                                         ))}
                                     </div>
-                                    {/* Sign Up */}
-                                    <div className="bg-gray-100 flex justify-center py-5">
+                                    {/* Button */}
+                                    <div className="bg-gray-50 flex justify-center py-4">
                                         <button
-                                            className={`${pkg.btnColor} text-white text-lg font-semibold px-8 py-2 rounded shadow transition-all`}
+                                            className={`
+                  ${pkg.name === "Starter" ? "bg-gray-400 hover:bg-gray-500"
+                                                    : pkg.name === "Basic" ? "bg-emerald-500 hover:bg-emerald-600"
+                                                        : pkg.name === "Standard" ? "bg-blue-500 hover:bg-blue-600"
+                                                            : pkg.name === "Professional" ? "bg-green-500 hover:bg-green-600"
+                                                                : "bg-yellow-400 hover:bg-yellow-500"}
+                  text-white text-base font-semibold px-8 py-2 rounded-lg shadow
+                  transition-all duration-150`}
                                             onClick={() => handleChoosePackage(pkg)}
                                         >
-                                            {pkg.buttonText}
+                                            {pkg.buttonText || "เลือก"}
                                         </button>
-
                                     </div>
                                 </div>
                             ))}
@@ -316,6 +363,8 @@ export default function Home() {
                     </div>
                 </div>
             )}
+
+
         </div>
     );
 }
