@@ -220,50 +220,50 @@ export default function Home() {
                 {activeTab === 0 && (
                     <div>
                         <h1 className="text-xl md:text-2xl font-bold text-blue-700 mb-4">หน้าหลัก</h1>
-                        <p>เนื้อหาสำหรับ "หน้าหลัก"</p>
+                        <p>เนื้อหาสำหรับ หน้าหลัก</p>
                     </div>
                 )}
                 {activeTab === 1 && (
                     <div>
                         <h1 className="text-xl md:text-2xl font-bold text-blue-700 mb-4">แดชบอร์ด</h1>
-                        <p>เนื้อหาสำหรับ "แดชบอร์ด"</p>
+                        <p>เนื้อหาสำหรับ แดชบอร์ด</p>
                     </div>
                 )}
                 {/* ... (เหมือนเดิมสำหรับแต่ละ tab) */}
                 {activeTab === 2 && (
                     <div>
                         <h1 className="text-xl md:text-2xl font-bold text-blue-700 mb-4">รับสินค้าเข้า</h1>
-                        <p>เนื้อหาสำหรับ "รับสินค้าเข้า"</p>
+                        <p>เนื้อหาสำหรับ รับสินค้าเข้า</p>
                     </div>
                 )}
                 {activeTab === 3 && (
                     <div>
                         <h1 className="text-xl md:text-2xl font-bold text-blue-700 mb-4">เบิก/จ่ายสินค้า</h1>
-                        <p>เนื้อหาสำหรับ "เบิก/จ่ายสินค้า"</p>
+                        <p>เนื้อหาสำหรับ เบิก/จ่ายสินค้า</p>
                     </div>
                 )}
                 {activeTab === 4 && (
                     <div>
                         <h1 className="text-xl md:text-2xl font-bold text-blue-700 mb-4">คงคลัง</h1>
-                        <p>เนื้อหาสำหรับ "คงคลัง"</p>
+                        <p>เนื้อหาสำหรับ คงคลัง</p>
                     </div>
                 )}
                 {activeTab === 5 && (
                     <div>
                         <h1 className="text-xl md:text-2xl font-bold text-blue-700 mb-4">รายงาน</h1>
-                        <p>เนื้อหาสำหรับ "รายงาน"</p>
+                        <p>เนื้อหาสำหรับ รายงาน</p>
                     </div>
                 )}
                 {activeTab === 6 && (
                     <div>
                         <h1 className="text-xl md:text-2xl font-bold text-blue-700 mb-4">ผู้ใช้งาน</h1>
-                        <p>เนื้อหาสำหรับ "ผู้ใช้งาน"</p>
+                        <p>เนื้อหาสำหรับ ผู้ใช้งาน</p>
                     </div>
                 )}
                 {activeTab === 7 && (
                     <div>
                         <h1 className="text-xl md:text-2xl font-bold text-blue-700 mb-4">ตั้งค่า</h1>
-                        <p>เนื้อหาสำหรับ "ตั้งค่า"</p>
+                        <p>เนื้อหาสำหรับ ตั้งค่า</p>
                     </div>
                 )}
             </div>

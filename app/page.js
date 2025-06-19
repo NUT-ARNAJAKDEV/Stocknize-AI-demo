@@ -51,7 +51,7 @@ export default function Home() {
         <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8 md:p-10">
           <h2 className="text-2xl font-bold mb-4">Sign in</h2>
           <p className="mb-6 text-sm text-gray-500">
-            Don't have an account?{" "}
+            Do not have an account?{" "}
             <a href="#" className="text-blue-600 hover:underline font-medium">Sign up</a>
           </p>
           <form className="space-y-4" onSubmit={handleSubmit}>
