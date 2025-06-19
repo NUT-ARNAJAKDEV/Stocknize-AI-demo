@@ -35,21 +35,21 @@ export default function Home() {
           <h2 className="text-xl md:text-2xl font-medium mb-2">
             Warehouse Management With AI
           </h2>
-          <p className="text-base md:text-lg opacity-90 mb-0">
+          <p className="text-sm md:text-base lg:text-lg opacity-90 mb-2">
             ซอฟต์แวร์คุณภาพด้านการจัดการคลังสินค้าด้วยระบบอัจฉริยะ
           </p>
         </div>
         {/* Footer */}
         <div className="text-xs opacity-70 flex items-center gap-2">
-
           <span>© 2015 - 2025 B.M.E. Solutions co.,ltd.</span>
         </div>
+
       </div>
 
       {/* RIGHT PANEL */}
       <div className="flex-1 flex items-center justify-center bg-gray-50 py-12">
         <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8 md:p-10">
-          <h2 className="text-2xl font-bold mb-4">Sign in</h2>
+          <h2 className="text-black-500 text-2xl font-bold mb-4">Sign in</h2>
           <p className="mb-6 text-sm text-gray-500">
             Do not have an account?{" "}
             <a href="#" className="text-blue-600 hover:underline font-medium">Sign up</a>
@@ -58,7 +58,7 @@ export default function Home() {
             <input
               type="text"
               placeholder="Email"
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none text-base"
+              className="text-black-500 w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none text-base"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               autoComplete="username"
@@ -66,14 +66,14 @@ export default function Home() {
             <input
               type="password"
               placeholder="Password"
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none text-base"
+              className="text-black-500 w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none text-base"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="current-password"
             />
             <div className="flex items-center justify-between">
               <label className="flex items-center gap-2 text-sm">
-                <input type="checkbox" className="accent-blue-500" />
+                <input type="checkbox" className="accent-blue-500 text-black-500" />
                 Keep me logged in
               </label>
               <a href="#" className="text-blue-600 hover:underline text-sm">Forgot password</a>
