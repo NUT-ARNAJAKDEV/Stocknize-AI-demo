@@ -10,7 +10,7 @@ const MENU = [
     "เบิก/จ่ายสินค้า",
     "คงคลัง",
     "รายงาน",
-    "ผู้ใช้งาน",
+    "สิทธิ์",
     "ตั้งค่า",
 ];
 
@@ -182,7 +182,7 @@ export default function Home() {
                                         คู่มือ
                                     </button>
                                     <button className="text-gray-500 text-[1.7rem] font-medium mb-2 block w-full text-left hover:bg-gray-100 rounded px-2 py-1 transition">
-                                        เกี่ยวกับผู้ใช้งาน
+                                        เกี่ยวกับสิทธิ์
                                     </button>
                                     <button className="text-gray-500 text-[1.7rem] font-medium block w-full text-left hover:bg-gray-100 rounded px-2 py-1 transition">
                                         เกี่ยวกับเรา
@@ -286,8 +286,8 @@ export default function Home() {
                 )}
                 {activeTab === 6 && (
                     <div>
-                        <h1 className="text-xl md:text-2xl font-bold text-blue-700 mb-4">ผู้ใช้งาน</h1>
-                        <p>เนื้อหาสำหรับ ผู้ใช้งาน</p>
+                        <h1 className="text-xl md:text-2xl font-bold text-blue-700 mb-4">สิทธิ์</h1>
+                        <p>เนื้อหาสำหรับ สิทธิ์</p>
                     </div>
                 )}
                 {activeTab === 7 && (
