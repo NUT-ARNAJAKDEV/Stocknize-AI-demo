@@ -49,7 +49,7 @@ export default function Home() {
       {/* RIGHT PANEL */}
       <div className="flex-1 flex items-center justify-center bg-gray-50 py-12">
         <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8 md:p-10">
-          <h2 className="text-black text-2xl font-bold mb-4">Sign in</h2>
+          <h2 className="text-2xl font-bold mb-4 text-black">Sign in</h2>
           <p className="mb-6 text-sm text-gray-500">
             Do not have an account?{" "}
             <a href="#" className="text-blue-600 hover:underline font-medium">Sign up</a>
@@ -58,7 +58,7 @@ export default function Home() {
             <input
               type="text"
               placeholder="Email"
-              className="text-black-500 w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none text-base"
+              className=" w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none text-base"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               autoComplete="username"
@@ -66,7 +66,7 @@ export default function Home() {
             <input
               type="password"
               placeholder="Password"
-              className="text-black-500 w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none text-base"
+              className=" w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none text-base"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="current-password"
