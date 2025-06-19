@@ -58,7 +58,7 @@ export default function Home() {
             <input
               type="text"
               placeholder="Email"
-              className=" w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none text-base"
+              className=" w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none text-base text-gray-500"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               autoComplete="username"
@@ -66,14 +66,14 @@ export default function Home() {
             <input
               type="password"
               placeholder="Password"
-              className=" w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none text-base"
+              className=" w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 outline-none text-base text-gray-500"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="current-password"
             />
             <div className="flex items-center justify-between">
-              <label className="flex items-center gap-2 text-sm ">
-                <input type="checkbox" className="accent-blue-500 text-black" />
+              <label className="flex items-center gap-2 text-sm text-black">
+                <input type="checkbox" className="accent-blue-500" />
                 Keep me logged in
               </label>
               <a href="#" className="text-blue-600 hover:underline text-sm">Forgot password</a>
